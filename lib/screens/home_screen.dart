@@ -1,5 +1,9 @@
 // lib/screens/home_screen.dart
-
+//
+// Exercise 1: Main dashboard — displays all expenses, filter chips, summary card.
+// Exercise 2: Budget tracker — LinearProgressIndicator, Set Budget dialog,
+//             80% threshold SnackBar alert, budget persisted in 'settings' box.
+// Exercise 3: Export button in AppBar — calls ExportService and shows SnackBar.
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import '../models/expense.dart';
@@ -149,7 +153,6 @@ class _HomeScreenState extends State<HomeScreen> {
             tooltip: 'Export this month',
             onPressed: _exportMonth,
           ),
-
           //Exercise 2: Set Budget icon button
           IconButton(
             icon: const Icon(Icons.savings_outlined),
@@ -232,6 +235,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  //Summary Card (Exercise 1 + Exercise 2)
   // Shows total spending, expense count, and — if a budget is set —
   // a LinearProgressIndicator that turns red at 80%.
   Widget _buildSummaryCard(
