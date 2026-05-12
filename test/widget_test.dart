@@ -5,16 +5,17 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:spendwise/main.dart';
 
 void main() {
-  testWidgets('App builds without crashing', (WidgetTester tester) async {
+  testWidgets('App builds without error', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const SpendWiseApp());
 
-    // Verify that the app builds successfully
-    expect(find.byType(SpendWiseApp), findsOneWidget);
+    // Verify that the app builds successfully by checking for the MaterialApp
+    expect(find.byType(MaterialApp), findsOneWidget);
   });
 }
